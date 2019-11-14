@@ -1,0 +1,65 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Maven
+target/
+
+# IDEs and editors
+# IntelliJ project files
+*.iml
+*.iws
+*.ipr
+.idea/
+
+# eclipse project file
+.settings/
+.metadata/
+.sonarlint/
+.recommenders/
+.classpath
+.project
+.factorypath
+
+# IDE - VSCode
+.vscode/*
+#!.vscode/settings.json
+#!.vscode/tasks.json
+#!.vscode/launch.json
+#!.vscode/extensions.json
+.history/*
+
+# misc
+.c9/
+*.launch
+*.sublime-workspace
+
+# Angular compiled output
+dist
+tmp
+out-tsc
+# Only exists if Bazel was run
+bazel-out
+
+# Node dependencies
+node_modules/
+
+# profiling files
+chrome-profiler-events*.json
+speed-measure-plugin*.json
+
+# Misc
+.sass-cache
+connect.lock
+coverage
+libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+typings
+*.swp
+release.properties
+pom.xml.releaseBackup
+pom.xml.tag
+
+# System Files
+.DS_Store
+Thumbs.db
