@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 
 import { UserModel } from '../../models/user.model';
 import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,18 +11,24 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-	
-  user: UserModel = new UserModel();
 
-  constructor( private auth: AuthService ) { }
+  user: UserModel = new UserModel();
+  message: string;
+
+  constructor( private authService: AuthService, private router: Router ) { }
 
   ngOnInit() {
   }
 
-	login( form: NgForm ) {
-		this.auth.login( this.user ).subscribe( (resp) => {
-			console.log(resp);
-		})
-	}
+  login( form: NgForm ) {
+    this.authService.login( this.user ).subscribe( (resp) => {
+      const redirect = this.authService.redirectUrl ? this.router.parseUrl(this.authService.redirectUrl) : '/protected/home';
+
+      this.router.navigateByUrl(redirect);
+    }, (err) => {
+      this.user.password = '';
+      this.message = 'Usuario o contraseña no valido';
+    });
+  }
 
 }

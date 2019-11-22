@@ -15,7 +15,7 @@ import com.dxc.demoapp.backend.service.ProductService;
  * ProductsController
  */
 @RestController
-@RequestMapping("/products")
+@RequestMapping("api/products")
 public class ProductsController {
 	
 	@Autowired

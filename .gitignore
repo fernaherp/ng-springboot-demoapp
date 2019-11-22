@@ -20,7 +20,7 @@ target/
 .factorypath
 
 # IDE - VSCode
-.vscode/*
+.vscode
 #!.vscode/settings.json
 #!.vscode/tasks.json
 #!.vscode/launch.json
@@ -40,6 +40,7 @@ out-tsc
 bazel-out
 
 # Node dependencies
+node/
 node_modules/
 
 # profiling files
